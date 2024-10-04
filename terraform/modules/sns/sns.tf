@@ -6,15 +6,21 @@ resource "aws_sns_topic" "image_resize_sns" {
 resource "aws_sns_topic_subscription" "email_subscription" {
   topic_arn = aws_sns_topic.image_resize_sns.arn
   protocol  = "email"
-  endpoint  = "knaidu@logiquad.com"
+  endpoint  = "raahel@elred.io"
 }
 
 resource "aws_sns_topic" "image_resize_sns_5" {
   name = "image-resize-sns-5-times"
 }
 
-resource "aws_sns_topic_subscription" "email_alarm_subscription" {
+resource "aws_sns_topic_subscription" "vignesh_email_alarm_subscription" {
   topic_arn = aws_sns_topic.image_resize_sns_5.arn
   protocol  = "email"
-  endpoint  = "harsh20wardhan@gmail.com"
+  endpoint  = "vignesh@elred.io"
+}
+
+resource "aws_sns_topic_subscription" "raahel_email_alarm_subscription" {
+  topic_arn = aws_sns_topic.image_resize_sns_5.arn
+  protocol  = "email"
+  endpoint  = "raahel@elred.io"
 }
